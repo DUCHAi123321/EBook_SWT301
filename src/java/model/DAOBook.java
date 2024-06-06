@@ -242,7 +242,7 @@ public class DAOBook extends DBConnect {
                 book.setBookCategory(bookCategory);
                 book.setStatus(status);
                 book.setPhoto(img);
-                book.setEmail(email);
+                book.setEmail(mail);
                 vector.add(book);
             }
         } catch (SQLException ex) {
