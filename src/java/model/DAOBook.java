@@ -18,10 +18,11 @@ import java.util.logging.Logger;
  * @author acer
  */
 public class DAOBook extends DBConnect {
- private static final Logger LOGGER = Logger.getLogger(DAOBook.class.getName());
+    private static final Logger LOGGER = Logger.getLogger(DAOBook.class.getName());
+
     public int AddBook(Book book) {
         int n = 0;
-        PreparedStatement pre= null;
+        PreparedStatement pre = null;
         String sql = "INSERT INTO [books]\n"
                 + "           ([bookName]\n"
                 + "           ,[author]\n"
@@ -41,14 +42,14 @@ public class DAOBook extends DBConnect {
             pre.setString(6, book.getPhoto());
             pre.setString(7, book.getEmail());
             n = pre.executeUpdate();
-         } catch (SQLException ex) {
-            LOGGER.log(Level.SEVERE, "Error adding book to the database: " + ex.getMessage(), ex);
+        } catch (SQLException ex) {
+            LOGGER.log(Level.SEVERE, "Error adding book to the database", ex);
         } finally {
             if (pre != null) {
                 try {
                     pre.close();
                 } catch (SQLException ex) {
-                    LOGGER.log(Level.SEVERE, "Error closing PreparedStatement: " + ex.getMessage(), ex);
+                    LOGGER.log(Level.SEVERE, "Error closing PreparedStatement", ex);
                 }
             }
         }
@@ -179,7 +180,6 @@ public class DAOBook extends DBConnect {
         }
         return vector;
     }
-    
 
     public Vector<Book> getOldBook(String email, String cate) {
         Vector<Book> vector = new Vector<Book>();
