@@ -10,6 +10,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Vector;
+
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -82,7 +83,7 @@ public class DAOBook extends DBConnect {
 
     public Book getBookById(int id) {
         Book book = null;
-        String sql = "select * from books where bookId = ?";
+        String sql = "select bookId, bookname, author, price, bookCategory, status, img, email from books where bookId = ?";
         PreparedStatement pre;
         try {
             pre = conn.prepareStatement(sql);
@@ -182,7 +183,7 @@ public class DAOBook extends DBConnect {
     }
 
     public Vector<Book> getOldBook(String email, String cate) {
-        Vector<Book> vector = new Vector<Book>();
+        Vector<Book> vector = new Vector<>();
         String sql = "select * from books where bookCategory = ? and email = ?";
         PreparedStatement pre;
         try {
