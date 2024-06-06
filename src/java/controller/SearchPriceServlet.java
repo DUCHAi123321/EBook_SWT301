@@ -13,6 +13,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import java.util.List;
 import java.util.Vector;
 import model.DAOBook;
 
@@ -36,7 +37,7 @@ public class SearchPriceServlet extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
             String range = request.getParameter("priceRange");
             DAOBook dao = new DAOBook();
-            Vector<Book> vector = dao.getBookByPrice(range);
+            List<Book> vector = dao.getBookByPrice(range);
             request.setAttribute("vector", vector);
             request.getRequestDispatcher("searchprice.jsp").forward(request, response);
         }

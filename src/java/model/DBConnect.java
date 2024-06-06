@@ -12,6 +12,9 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+
 
 /**
  *
@@ -22,15 +25,13 @@ public class DBConnect {
     Connection conn = null;
 
     public DBConnect() {
-        this("jdbc:sqlserver://localhost:1433;databaseName=EBook", "sa", "sa");
-    }
-
-    public DBConnect(String url, String name, String password) {
         try {
-            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-            conn = DriverManager.getConnection("jdbc:sqlserver://localhost:1433;databaseName=EBook", "sa", "sa");
+            String pw = "1234";
+            String hashedPw = hashPassword(pw);
+            String url = "jdbc:sqlserver://localhost:1433;databaseName=EBook";
+            conn = DriverManager.getConnection(url, "sa", hashedPw);
             System.out.print("connected");
-        } catch (ClassNotFoundException | SQLException ex) {
+        } catch (SQLException ex) {
             Logger.getLogger(DBConnect.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
@@ -48,30 +49,44 @@ public class DBConnect {
     }
 
     public static void main(String[] args) {
-    // In your main method, you can create instances of your DAOUser and User classes
-    DAOUser dao = new DAOUser();
-    User user = new User(); // Create a User object with the required data
+        // In your main method, you can create instances of your DAOUser and User classes
+        DAOUser dao = new DAOUser();
+        User user = new User(); // Create a User object with the required data
 
-    // Set user data, for example:
-    user.setId(1);
-    user.setName("John Doe");
-    user.setPassword("password123");
-    user.setPhonenumber("1234567890");
-    user.setAddress("123 Main St");
-    user.setLandmark("Near Park");
-    user.setCity("CityName");
-    user.setState("StateName");
-    user.setPincode("12345");
-    user.setEmail("johndoe@example.com");
+        // Set user data, for example:
+        user.setId(1);
+        user.setName("John Doe");
+        user.setPassword("password123");
+        user.setPhonenumber("1234567890");
+        user.setAddress("123 Main St");
+        user.setLandmark("Near Park");
+        user.setCity("CityName");
+        user.setState("StateName");
+        user.setPincode("12345");
+        user.setEmail("johndoe@example.com");
 
-    // Call the editUser method to update the user's information
-    int result = dao.editUser(user);
+        // Call the editUser method to update the user's information
+        int result = dao.editUser(user);
 
-    if (result > 0) {
-        System.out.println("User updated successfully.");
-    } else {
-        System.out.println("User update failed.");
+        if (result > 0) {
+            System.out.println("User updated successfully.");
+        } else {
+            System.out.println("User update failed.");
+        }
     }
-}
 
+    private String hashPassword(String password) {
+        try {
+            MessageDigest md = MessageDigest.getInstance("SHA-256");
+            byte[] hashedPassword = md.digest(password.getBytes());
+            StringBuilder sb = new StringBuilder();
+            for (byte b : hashedPassword) {
+                sb.append(String.format("%02x", b));
+            }
+            return sb.toString();
+        } catch (NoSuchAlgorithmException e) {
+            Logger.getLogger(DBConnect.class.getName()).log(Level.SEVERE, null, e);
+            return null;
+        }
+    }
 }

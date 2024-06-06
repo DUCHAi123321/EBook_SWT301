@@ -3,10 +3,17 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/D:/Du_an_test_swt301_bug/EBookProject/EBook_SWT301/src/java/controller/AddBooksServlet.java</file>
             <file>file:/D:/Du_an_test_swt301_bug/EBookProject/EBook_SWT301/src/java/controller/ChangePass.java</file>
             <file>file:/D:/Du_an_test_swt301_bug/EBookProject/EBook_SWT301/src/java/controller/ChangeStatusServlet.java</file>
             <file>file:/D:/Du_an_test_swt301_bug/EBookProject/EBook_SWT301/src/java/controller/DeleteOrderServlet.java</file>
+=======
+            <file>file:/W:/JAVA%20Servlet/EBookProject/New%20folder/EBook_SWT301/src/java/model/DAOBook.java</file>
+            <file>file:/W:/JAVA%20Servlet/EBookProject/New%20folder/EBook_SWT301/src/java/entity/Book.java</file>
+            <file>file:/W:/JAVA%20Servlet/EBookProject/New%20folder/EBook_SWT301/src/java/controller/AddOldBookServlet.java</file>
+            <file>file:/W:/JAVA%20Servlet/EBookProject/New%20folder/EBook_SWT301/src/java/controller/AddBooksServlet.java</file>
+>>>>>>> 479aa42e44178bdc672a66e182f4aa074741b216
         </group>
     </open-files>
 </project-private>

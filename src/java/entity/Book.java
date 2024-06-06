@@ -18,6 +18,7 @@ public class Book {
     private String status;
     private String photo;
     private String email;
+<<<<<<< HEAD
 
     public Book(int bookId, String bookName, String author, double price, String bookCategory, String status, String photo, String email) {
         this.bookId = bookId;
@@ -40,6 +41,9 @@ public class Book {
         this.email = email;
     }
 
+=======
+        
+>>>>>>> 479aa42e44178bdc672a66e182f4aa074741b216
     public Book() {
         throw new UnsupportedOperationException("Default constructor is not supported.");
     }

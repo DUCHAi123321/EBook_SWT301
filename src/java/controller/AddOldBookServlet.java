@@ -50,7 +50,14 @@ public class AddOldBookServlet extends HttpServlet {
             String mail = request.getParameter("email");
             HttpSession session = request.getSession();
 
-            Book book = new Book(bname, author, price, category, status, filename, mail);
+            Book book = new Book();
+                book.setBookName(bname);
+                book.setAuthor(author);
+                book.setPrice(price);
+                book.setBookCategory(category);
+                book.setStatus(status);
+                book.setPhoto(filename);
+                book.setEmail(mail);
             int n = dao.AddBook(book);
             if (n > 0) {
                 String path = getServletContext().getRealPath("") + "book";

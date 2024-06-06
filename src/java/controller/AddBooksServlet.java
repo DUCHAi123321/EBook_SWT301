@@ -49,7 +49,13 @@ public class AddBooksServlet extends HttpServlet {
             String filename = part.getSubmittedFileName();
             HttpSession session = request.getSession();
             
-            Book book = new Book(bname, author, price, category, status, filename,"admin");
+            Book book = new Book();
+                book.setBookName(bname);
+                book.setAuthor(author);
+                book.setPrice(price);
+                book.setBookCategory(category);
+                book.setStatus(status);
+                book.setPhoto(filename);
             int n = dao.AddBook(book);
             if (n > 0) {
                 String path = getServletContext().getRealPath("") + "book";
