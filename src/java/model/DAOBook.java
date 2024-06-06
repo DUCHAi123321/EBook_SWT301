@@ -9,6 +9,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Vector;
 
 import java.util.logging.Level;
@@ -57,8 +59,8 @@ public class DAOBook extends DBConnect {
         return n;
     }
 
-    public Vector<Book> getAllBooks(String sql) {
-        Vector<Book> vector = new Vector<>();
+    public List<Book> getAllBooks(String sql) {
+        List<Book> list = new ArrayList<>();
         Statement state;
         try {
             state = conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
@@ -73,12 +75,12 @@ public class DAOBook extends DBConnect {
                 String img = rs.getString(7);
                 String email = rs.getString(8);
                 Book book = new Book(bookId, bookname, author, price, bookCategory, status, img, email);
-                vector.add(book);
+                list.add(book);
             }
         } catch (SQLException ex) {
             Logger.getLogger(DAOBook.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return vector;
+        return list;
     }
 
     public Book getBookById(int id) {
