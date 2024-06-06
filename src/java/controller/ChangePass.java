@@ -38,7 +38,6 @@ public class ChangePass extends HttpServlet {
         final String CHANGE_PASSWORD_PAGE = "changepassword.jsp";
 
         try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
             HttpSession session = request.getSession();
             User u = (User) session.getAttribute("userobj");
             String pass = request.getParameter("password");
@@ -55,7 +54,7 @@ public class ChangePass extends HttpServlet {
                         response.sendRedirect(CHANGE_PASSWORD_PAGE);
                     } else {
                         session.setAttribute("failedMsg", "Something wrong on server....");
-                        response.sendRedirect("changepassword.jsp");
+                        response.sendRedirect(CHANGE_PASSWORD_PAGE);
                     }
                 } else {
                     session.setAttribute("failedMsg", "Please check repassword");

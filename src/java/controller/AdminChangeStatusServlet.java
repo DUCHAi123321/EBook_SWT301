@@ -34,7 +34,6 @@ public class AdminChangeStatusServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try ( PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
             DAOOrder dao = new DAOOrder();
             int status = Integer.parseInt(request.getParameter("status"));
             int orderId = Integer.parseInt(request.getParameter("id"));

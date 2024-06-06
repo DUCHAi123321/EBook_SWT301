@@ -35,7 +35,6 @@ public class UpdateQuantity extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try ( PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
             HttpSession session = request.getSession(true);
             Enumeration<String> keys = session.getAttributeNames();
             while (keys.hasMoreElements()) {
