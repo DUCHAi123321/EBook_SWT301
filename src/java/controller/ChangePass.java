@@ -34,7 +34,10 @@ public class ChangePass extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try ( PrintWriter out = response.getWriter()) {
+
+        final String CHANGE_PASSWORD_PAGE = "changepassword.jsp";
+
+        try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             HttpSession session = request.getSession();
             User u = (User) session.getAttribute("userobj");
@@ -43,24 +46,24 @@ public class ChangePass extends HttpServlet {
             String repass = request.getParameter("repassword");
             DAOUser dao = new DAOUser();
             int check = dao.checkUserPassword(u.getId(), pass);
-            
+
             if (check > 0) {
                 if (newpass.equals(repass)) {
                     int n = dao.setPassword(u.getId(), newpass);
                     if (n > 0) {
                         session.setAttribute("successMsg", "Update Password Successfully");
-                        response.sendRedirect("changepassword.jsp");
+                        response.sendRedirect(CHANGE_PASSWORD_PAGE);
                     } else {
                         session.setAttribute("failedMsg", "Something wrong on server....");
                         response.sendRedirect("changepassword.jsp");
                     }
                 } else {
                     session.setAttribute("failedMsg", "Please check repassword");
-                    response.sendRedirect("changepassword.jsp");
+                    response.sendRedirect(CHANGE_PASSWORD_PAGE);
                 }
             } else {
                 session.setAttribute("failedMsg", "Please check password right");
-                response.sendRedirect("changepassword.jsp");
+                response.sendRedirect(CHANGE_PASSWORD_PAGE);
             }
         }
     }
