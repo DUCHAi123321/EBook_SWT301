@@ -216,8 +216,8 @@ public class DAOBook extends DBConnect {
         return vector;
     }
 
-    public Vector<Book> getOldBook(String email, String cate) {
-        Vector<Book> vector = new Vector<>();
+    public List<Book> getOldBook(String email, String cate) {
+        List<Book> vector = new ArrayList<>();
         String sql = "select * from books where bookCategory = ? and email = ?";
         PreparedStatement pre;
         try {
