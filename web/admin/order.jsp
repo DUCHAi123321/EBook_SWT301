@@ -6,6 +6,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="model.DAOOrder,java.util.Vector,java.sql.ResultSet" %>
+
 <!DOCTYPE html>
 <html>
     <head>
