@@ -38,6 +38,22 @@ public class User {
         this.email = email;
     }
 
+    public User(int id, String name, String password, String phonenumber, String address) {
+        this.id = id;
+        this.name = name;
+        this.password = password;
+        this.phonenumber = phonenumber;
+        this.address = address;
+    }
+
+    public User(String landmark, String city, String state, String pincode, String email) {
+        this.landmark = landmark;
+        this.city = city;
+        this.state = state;
+        this.pincode = pincode;
+        this.email = email;
+    }
+
     public int getId() {
         return id;
     }
