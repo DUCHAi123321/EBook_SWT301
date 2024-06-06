@@ -6,7 +6,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="model.DAOOrder,java.util.Vector,java.sql.ResultSet" %>
-
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -32,7 +32,7 @@
         DAOOrder dao = new DAOOrder();
         ResultSet rs = dao.getResultSet(sql);
     %>
-    <p class="text-center text-success">${param.message}</p>
+    <p class="text-center text-success">${fn:escapeXml(param.message)}</p>
     <div class="container p-1">
         <h3 class="text-center text-primary ">
             Your Order
