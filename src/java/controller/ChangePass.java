@@ -36,6 +36,7 @@ public class ChangePass extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
 
         final String CHANGE_PASSWORD_PAGE = "changepassword.jsp";
+        final String FAILED_MSG = "failedMsg";
 
         try (PrintWriter out = response.getWriter()) {
             HttpSession session = request.getSession();
@@ -53,15 +54,15 @@ public class ChangePass extends HttpServlet {
                         session.setAttribute("successMsg", "Update Password Successfully");
                         response.sendRedirect(CHANGE_PASSWORD_PAGE);
                     } else {
-                        session.setAttribute("failedMsg", "Something wrong on server....");
+                        session.setAttribute(FAILED_MSG, "Something wrong on server....");
                         response.sendRedirect(CHANGE_PASSWORD_PAGE);
                     }
                 } else {
-                    session.setAttribute("failedMsg", "Please check repassword");
+                    session.setAttribute(FAILED_MSG, "Please check repassword");
                     response.sendRedirect(CHANGE_PASSWORD_PAGE);
                 }
             } else {
-                session.setAttribute("failedMsg", "Please check password right");
+                session.setAttribute(FAILED_MSG, "Please check password right");
                 response.sendRedirect(CHANGE_PASSWORD_PAGE);
             }
         }
