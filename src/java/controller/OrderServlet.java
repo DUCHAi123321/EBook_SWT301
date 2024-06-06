@@ -38,56 +38,73 @@ public class OrderServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        try ( PrintWriter out = response.getWriter()) {
-            HttpSession session = request.getSession(false);
-            String address = request.getParameter("address");
-            String landmark = request.getParameter("landmark");
-            String city = request.getParameter("city");
-            String state = request.getParameter("state");
-            String zipcode = request.getParameter("pincode");
-            String fulladd = address + " " + landmark + " " + city + " " + state + " " + zipcode;
-            String payment = request.getParameter("payment"); // Corrected parameter name
-            String mess="";
-            if (session != null) {
-                User user = (User) session.getAttribute("userobj");
-                if (user != null) {
-                    DAOOrder dao = new DAOOrder();
-                    Order o = new Order();
-                    o.setUserId(user.getId());
-                    o.setFullAddress(fulladd);
-                    o.setPaymentMethod(payment);
-                    int orderId = dao.createOrder(o);
+    response.setContentType("text/html;charset=UTF-8");
+    try (PrintWriter out = response.getWriter()) {
+        HttpSession session = request.getSession(false);
+        if (session != null) {
+            User user = (User) session.getAttribute("userobj");
+            if (user != null) {
+                String address = request.getParameter("address");
+                String landmark = request.getParameter("landmark");
+                String city = request.getParameter("city");
+                String state = request.getParameter("state");
+                String zipcode = request.getParameter("pincode");
+                String fullAddress = address + " " + landmark + " " + city + " " + state + " " + zipcode;
+                String payment = request.getParameter("payment");
 
-                    if (orderId > 0) {
-                        int maxOrderId = dao.getMaxOrderId(); // Retrieve max order ID after creating the order
-
-                        Enumeration<String> keys = session.getAttributeNames();
-                        while (keys.hasMoreElements()) {
-                            String key = keys.nextElement();
-                            if (!key.equals("userobj") && !key.equals("admin")) {
-                                Cart cartItem = (Cart) session.getAttribute(key);
-                                OrderItem orderItem = new OrderItem();
-                                orderItem.setOrderId(maxOrderId); // Use the retrieved max order ID
-                                orderItem.setBookId(cartItem.getBookId());
-                                orderItem.setQuantity(cartItem.getQuantity());
-                                orderItem.setListPrice(cartItem.getList_price());
-                                DAOOrderItem dao2 = new DAOOrderItem();
-                                dao2.createOrderItem(orderItem);
-                                session.removeAttribute(key);
-                            }
-                        }
-                        mess = "Add Successfully";
-                        response.sendRedirect("displayorder.jsp?message="+mess);
-                    } else {
-                        mess = "Something On Server";
-                        response.sendRedirect("displayorder.jsp?message="+mess);
-                    }
+                int orderId = createOrder(user, fullAddress, payment);
+                if (orderId > 0) {
+                    int maxOrderId = getMaxOrderIdAfterCreation();
+                    addOrderItems(session, maxOrderId);
+                    redirectWithMessage(response, "Add Successfully");
+                } else {
+                    redirectWithMessage(response, "Something On Server");
                 }
             }
         }
-
     }
+}
+
+private int createOrder(User user, String fullAddress, String payment) {
+    DAOOrder dao = new DAOOrder();
+    Order order = new Order();
+    order.setUserId(user.getId());
+    order.setFullAddress(fullAddress);
+    order.setPaymentMethod(payment);
+    return dao.createOrder(order);
+}
+
+private int getMaxOrderIdAfterCreation() {
+    DAOOrder dao = new DAOOrder();
+    return dao.getMaxOrderId();
+}
+
+private void addOrderItems(HttpSession session, int maxOrderId) {
+    Enumeration<String> keys = session.getAttributeNames();
+    while (keys.hasMoreElements()) {
+        String key = keys.nextElement();
+        if (!key.equals("userobj") && !key.equals("admin")) {
+            Cart cartItem = (Cart) session.getAttribute(key);
+            OrderItem orderItem = createOrderItem(maxOrderId, cartItem);
+            DAOOrderItem dao2 = new DAOOrderItem();
+            dao2.createOrderItem(orderItem);
+            session.removeAttribute(key);
+        }
+    }
+}
+
+private OrderItem createOrderItem(int maxOrderId, Cart cartItem) {
+    OrderItem orderItem = new OrderItem();
+    orderItem.setOrderId(maxOrderId);
+    orderItem.setBookId(cartItem.getBookId());
+    orderItem.setQuantity(cartItem.getQuantity());
+    orderItem.setListPrice(cartItem.getListPrice());
+    return orderItem;
+}
+
+private void redirectWithMessage(HttpServletResponse response, String message) throws IOException {
+    response.sendRedirect("displayorder.jsp?message=" + message);
+}
 
 // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
 /**
