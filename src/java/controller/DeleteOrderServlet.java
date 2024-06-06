@@ -39,7 +39,7 @@ public class DeleteOrderServlet extends HttpServlet {
             DAOOrder dao = new DAOOrder();
             boolean delete = dao.deleteOrder(orderId);
             HttpSession session = request.getSession();
-            if (delete == true) {
+            if (delete) {
                 session.setAttribute("successMsg", "Delete Order Successfully");
                 response.sendRedirect("admin/order.jsp");
             } else {

@@ -5,7 +5,9 @@
         <group>
             <file>file:/D:/HK5/SWT/New%20folder/EBook_SWT301/src/java/model/DAOBook.java</file>
             <file>file:/D:/HK5/SWT/New%20folder/EBook_SWT301/nbproject/build-impl.xml</file>
+            <file>file:/D:/HK5/SWT/New%20folder/EBook_SWT301/src/java/entity/Cart.java</file>
             <file>file:/D:/HK5/SWT/New%20folder/EBook_SWT301/src/java/model/DBConnect.java</file>
+            <file>file:/D:/HK5/SWT/New%20folder/EBook_SWT301/src/java/controller/OrderServlet.java</file>
         </group>
     </open-files>
 </project-private>
