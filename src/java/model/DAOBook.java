@@ -442,10 +442,10 @@ public class DAOBook extends DBConnect {
         return vector;
     }
 
-    public Vector<Book> getOldBook() {
+    public List<Book> getOldBook() {
         Book book = null;
         String sql = "Select * from books where bookCategory = ? and status = ?";
-        Vector<Book> vector = new Vector<Book>();
+        List<Book> vector = new ArrayList<Book>();
         try {
             PreparedStatement st = conn.prepareStatement(sql);
             st.setString(1, "Old");
