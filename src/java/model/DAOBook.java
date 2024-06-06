@@ -74,7 +74,15 @@ public class DAOBook extends DBConnect {
                 String status = rs.getString(6);
                 String img = rs.getString(7);
                 String email = rs.getString(8);
-                Book book = new Book(bookId, bookname, author, price, bookCategory, status, img, email);
+                Book book = new Book();
+                book.setBookId(bookId);
+                book.setBookName(bookname);
+                book.setAuthor(author);
+                book.setPrice(price);
+                book.setBookCategory(bookCategory);
+                book.setStatus(status);
+                book.setPhoto(img);
+                book.setEmail(email);
                 list.add(book);
             }
         } catch (SQLException ex) {
@@ -100,7 +108,15 @@ public class DAOBook extends DBConnect {
                 String status = rs.getString(6);
                 String img = rs.getString(7);
                 String email = rs.getString(8);
-                book = new Book(bookId, bookname, author, price, bookCategory, status, img, email);
+                book = new Book();
+                book.setBookId(bookId);
+                book.setBookName(bookname);
+                book.setAuthor(author);
+                book.setPrice(price);
+                book.setBookCategory(bookCategory);
+                book.setStatus(status);
+                book.setPhoto(img);
+                book.setEmail(email);
             }
         } catch (SQLException ex) {
             Logger.getLogger(DAOBook.class.getName()).log(Level.SEVERE, null, ex);
@@ -128,7 +144,15 @@ public class DAOBook extends DBConnect {
                 String status = rs.getString(6);
                 String img = rs.getString(7);
                 String email = rs.getString(8);
-                Book book = new Book(bookId, bookname, author, price, bookCategory, status, img, email);
+                Book book = new Book();
+                book.setBookId(bookId);
+                book.setBookName(bookname);
+                book.setAuthor(author);
+                book.setPrice(price);
+                book.setBookCategory(bookCategory);
+                book.setStatus(status);
+                book.setPhoto(img);
+                book.setEmail(email);
                 vector.add(book);
             }
         } catch (SQLException ex) {
@@ -175,7 +199,15 @@ public class DAOBook extends DBConnect {
                 String status = rs.getString(6);
                 String img = rs.getString(7);
                 String email = rs.getString(8);
-                Book book = new Book(bookId, bookname, author, price, bookCategory, status, img, email);
+                Book book = new Book();
+                book.setBookId(bookId);
+                book.setBookName(bookname);
+                book.setAuthor(author);
+                book.setPrice(price);
+                book.setBookCategory(bookCategory);
+                book.setStatus(status);
+                book.setPhoto(img);
+                book.setEmail(email);
                 vector.add(book);
             }
         } catch (SQLException ex) {
@@ -202,7 +234,15 @@ public class DAOBook extends DBConnect {
                 String status = rs.getString(6);
                 String img = rs.getString(7);
                 String mail = rs.getString(8);
-                Book book = new Book(bookId, bookname, author, price, bookCategory, status, img, mail);
+                Book book = new Book();
+                book.setBookId(bookId);
+                book.setBookName(bookname);
+                book.setAuthor(author);
+                book.setPrice(price);
+                book.setBookCategory(bookCategory);
+                book.setStatus(status);
+                book.setPhoto(img);
+                book.setEmail(email);
                 vector.add(book);
             }
         } catch (SQLException ex) {
@@ -279,7 +319,15 @@ public class DAOBook extends DBConnect {
                 String status = rs.getString(6);
                 String img = rs.getString(7);
                 String email = rs.getString(8);
-                book = new Book(bookId, bookname, author, price, bookCategory, status, img, email);
+                book = new Book();
+                book.setBookId(bookId);
+                book.setBookName(bookname);
+                book.setAuthor(author);
+                book.setPrice(price);
+                book.setBookCategory(bookCategory);
+                book.setStatus(status);
+                book.setPhoto(img);
+                book.setEmail(email);
                 vector.add(book);
                 i++;
             }
@@ -307,7 +355,15 @@ public class DAOBook extends DBConnect {
                 String status = rs.getString(6);
                 String img = rs.getString(7);
                 String email = rs.getString(8);
-                book = new Book(bookId, bookname, author, price, bookCategory, status, img, email);
+                book = new Book();
+                book.setBookId(bookId);
+                book.setBookName(bookname);
+                book.setAuthor(author);
+                book.setPrice(price);
+                book.setBookCategory(bookCategory);
+                book.setStatus(status);
+                book.setPhoto(img);
+                book.setEmail(email);
                 vector.add(book);
             }
         } catch (SQLException e) {
@@ -334,7 +390,15 @@ public class DAOBook extends DBConnect {
                 String status = rs.getString(6);
                 String img = rs.getString(7);
                 String email = rs.getString(8);
-                book = new Book(bookId, bookname, author, price, bookCategory, status, img, email);
+                book = new Book();
+                book.setBookId(bookId);
+                book.setBookName(bookname);
+                book.setAuthor(author);
+                book.setPrice(price);
+                book.setBookCategory(bookCategory);
+                book.setStatus(status);
+                book.setPhoto(img);
+                book.setEmail(email);
                 vector.add(book);
                 i++;
             }
@@ -361,7 +425,15 @@ public class DAOBook extends DBConnect {
                 String status = rs.getString(6);
                 String img = rs.getString(7);
                 String email = rs.getString(8);
-                book = new Book(bookId, bookname, author, price, bookCategory, status, img, email);
+                book = new Book();
+                book.setBookId(bookId);
+                book.setBookName(bookname);
+                book.setAuthor(author);
+                book.setPrice(price);
+                book.setBookCategory(bookCategory);
+                book.setStatus(status);
+                book.setPhoto(img);
+                book.setEmail(email);
                 vector.add(book);
             }
         } catch (SQLException e) {
@@ -389,7 +461,15 @@ public class DAOBook extends DBConnect {
                 String status = rs.getString(6);
                 String img = rs.getString(7);
                 String email = rs.getString(8);
-                book = new Book(bookId, bookname, author, price, bookCategory, status, img, email);
+                book = new Book();
+                book.setBookId(bookId);
+                book.setBookName(bookname);
+                book.setAuthor(author);
+                book.setPrice(price);
+                book.setBookCategory(bookCategory);
+                book.setStatus(status);
+                book.setPhoto(img);
+                book.setEmail(email);
                 vector.add(book);
                 i++;
             }
@@ -417,7 +497,15 @@ public class DAOBook extends DBConnect {
                 String status = rs.getString(6);
                 String img = rs.getString(7);
                 String email = rs.getString(8);
-                book = new Book(bookId, bookname, author, price, bookCategory, status, img, email);
+                book = new Book();
+                book.setBookId(bookId);
+                book.setBookName(bookname);
+                book.setAuthor(author);
+                book.setPrice(price);
+                book.setBookCategory(bookCategory);
+                book.setStatus(status);
+                book.setPhoto(img);
+                book.setEmail(email);
                 vector.add(book);
             }
         } catch (SQLException e) {

@@ -17,30 +17,7 @@ public class Book {
     private String status;
     private String photo;
     private String email;
-
-
-    public Book(int bookId, String bookName, String author, double price, String bookCategory, String status, String photo,String email) {
-        this.bookId = bookId;
-        this.bookName = bookName;
-        this.author = author;
-        this.price = price;
-        this.bookCategory = bookCategory;
-        this.status = status;
-        this.photo = photo;
-        this.email = email;
-    }
-    
-
-    public Book( String bookName, String author, double price, String bookCategory, String status, String photo,String email) {
-        this.bookName = bookName;
-        this.author = author;
-        this.price = price;
-        this.bookCategory = bookCategory;
-        this.status = status;
-        this.photo = photo;
-        this.email = email;
-    }
-
+        
     public Book() {
         
     }
