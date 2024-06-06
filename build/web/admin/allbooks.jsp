@@ -42,7 +42,7 @@
             <% for(Book b: bookList) {%>
             <tr>
                 <th scope="row"><%=b.getBookId()%></th>
-                <td><img src="../book/<%=b.getPhoto()%>" style="width: 50px;height: 50px"></td>
+                <td><img src="../book/<%=b.getPhoto()%>" style="width: 50px;height: 50px " alt="a book you find "></td>
                 <td><%=b.getBookName()%></td>
                 <td><%=b.getAuthor()%></td>
                 <td><%=b.getPrice()%></td>
