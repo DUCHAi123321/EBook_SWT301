@@ -9,6 +9,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Vector;
 
 import java.util.logging.Level;
@@ -135,8 +137,8 @@ public class DAOBook extends DBConnect {
         return vector;
     }
 
-    public Vector<Book> getBookByPrice(String priceRange) {
-        Vector<Book> vector = new Vector<>();
+    public List<Book> getBookByPrice(String priceRange) {
+        List<Book> vector = new ArrayList<>();
         String sql = "select * from books where price >= ? AND price <=?";
         PreparedStatement pre;
         double minPrice = 0;
