@@ -3,44 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-<<<<<<< HEAD
-            <file>file:/D:/Du_an_test_swt301_bug/EBookProject/BookProject/src/java/controller/EditUserServlet.java</file>
-            <file>file:/D:/Du_an_test_swt301_bug/EBookProject/BookProject/src/java/model/DBConnect.java</file>
-            <file>file:/D:/Du_an_test_swt301_bug/EBookProject/BookProject/src/java/controller/ChangePass.java</file>
-            <file>file:/D:/Du_an_test_swt301_bug/EBookProject/BookProject/src/java/model/DAOBook.java</file>
-            <file>file:/D:/Du_an_test_swt301_bug/EBookProject/BookProject/src/java/entity/Book.java</file>
-            <file>file:/D:/Du_an_test_swt301_bug/EBookProject/BookProject/src/java/controller/UpdateQuantity.java</file>
-            <file>file:/D:/Du_an_test_swt301_bug/EBookProject/BookProject/src/java/controller/SearchPriceServlet.java</file>
-            <file>file:/D:/Du_an_test_swt301_bug/EBookProject/BookProject/src/java/controller/RemoveItemFromCart.java</file>
-            <file>file:/D:/Du_an_test_swt301_bug/EBookProject/BookProject/src/java/controller/AddOldBookServlet.java</file>
-            <file>file:/D:/Du_an_test_swt301_bug/EBookProject/BookProject/src/java/controller/AdminChangeStatusServlet.java</file>
-            <file>file:/D:/Du_an_test_swt301_bug/EBookProject/BookProject/src/java/controller/AddBooksServlet.java</file>
-            <file>file:/D:/Du_an_test_swt301_bug/EBookProject/BookProject/src/java/controller/CartServlet.java</file>
-            <file>file:/D:/Du_an_test_swt301_bug/EBookProject/BookProject/src/java/controller/LoginServlet.java</file>
-            <file>file:/D:/Du_an_test_swt301_bug/EBookProject/BookProject/src/java/controller/DeleteBookServlet.java</file>
-            <file>file:/D:/Du_an_test_swt301_bug/EBookProject/BookProject/src/java/controller/LogoutServlet.java</file>
-            <file>file:/D:/Du_an_test_swt301_bug/EBookProject/BookProject/src/java/controller/SetAddressServlet.java</file>
-            <file>file:/D:/Du_an_test_swt301_bug/EBookProject/BookProject/src/java/controller/EditBooksServlet.java</file>
-            <file>file:/D:/Du_an_test_swt301_bug/EBookProject/BookProject/src/java/model/DAOOrderItem.java</file>
-            <file>file:/D:/Du_an_test_swt301_bug/EBookProject/BookProject/src/java/model/DAOOrder.java</file>
-            <file>file:/D:/Du_an_test_swt301_bug/EBookProject/BookProject/src/java/controller/DeleteUserServlet.java</file>
-            <file>file:/D:/Du_an_test_swt301_bug/EBookProject/BookProject/src/java/controller/RegisterServlet.java</file>
-            <file>file:/D:/Du_an_test_swt301_bug/EBookProject/BookProject/src/java/entity/Order.java</file>
-            <file>file:/D:/Du_an_test_swt301_bug/EBookProject/BookProject/src/java/controller/DeleteOrderServlet.java</file>
-            <file>file:/D:/Du_an_test_swt301_bug/EBookProject/BookProject/src/java/controller/ChangeStatusServlet.java</file>
-            <file>file:/D:/Du_an_test_swt301_bug/EBookProject/BookProject/src/java/controller/ClearCart.java</file>
-            <file>file:/D:/Du_an_test_swt301_bug/EBookProject/BookProject/src/java/controller/DeleteOldBookServlet.java</file>
-            <file>file:/D:/Du_an_test_swt301_bug/EBookProject/BookProject/src/java/model/DAOUser.java</file>
-            <file>file:/D:/Du_an_test_swt301_bug/EBookProject/BookProject/src/java/controller/OrderServlet.java</file>
-            <file>file:/D:/Du_an_test_swt301_bug/EBookProject/BookProject/src/java/controller/SearchServlet.java</file>
-            <file>file:/D:/Du_an_test_swt301_bug/EBookProject/BookProject/src/java/entity/Cart.java</file>
-=======
-            <file>file:/D:/HK5/SWT/New%20folder/EBook_SWT301/src/java/model/DAOBook.java</file>
-            <file>file:/D:/HK5/SWT/New%20folder/EBook_SWT301/nbproject/build-impl.xml</file>
-            <file>file:/D:/HK5/SWT/New%20folder/EBook_SWT301/src/java/entity/Cart.java</file>
-            <file>file:/D:/HK5/SWT/New%20folder/EBook_SWT301/src/java/model/DBConnect.java</file>
-            <file>file:/D:/HK5/SWT/New%20folder/EBook_SWT301/src/java/controller/OrderServlet.java</file>
->>>>>>> 9e6c6190b1d1343bc1b2040fb6c12fc67a516ae5
+            <file>file:/D:/Du_an_test_swt301_bug/EBookProject/EBook_SWT301/src/java/controller/AddBooksServlet.java</file>
+            <file>file:/D:/Du_an_test_swt301_bug/EBookProject/EBook_SWT301/src/java/controller/ChangePass.java</file>
+            <file>file:/D:/Du_an_test_swt301_bug/EBookProject/EBook_SWT301/src/java/controller/ChangeStatusServlet.java</file>
+            <file>file:/D:/Du_an_test_swt301_bug/EBookProject/EBook_SWT301/src/java/controller/DeleteOrderServlet.java</file>
         </group>
     </open-files>
 </project-private>
