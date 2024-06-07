@@ -9,6 +9,7 @@ package entity;
  * @author acer
  */
 public class Book {
+
     private int bookId;
     private String bookName;
     private String author;
@@ -17,11 +18,36 @@ public class Book {
     private String status;
     private String photo;
     private String email;
-        
-    public Book() {
-        
+<<<<<<< HEAD
+
+    public Book(int bookId, String bookName, String author, double price, String bookCategory, String status, String photo, String email) {
+        this.bookId = bookId;
+        this.bookName = bookName;
+        this.author = author;
+        this.price = price;
+        this.bookCategory = bookCategory;
+        this.status = status;
+        this.photo = photo;
+        this.email = email;
     }
-    
+
+    public Book(String bookName, String author, double price, String bookCategory, String status, String photo, String email) {
+        this.bookName = bookName;
+        this.author = author;
+        this.price = price;
+        this.bookCategory = bookCategory;
+        this.status = status;
+        this.photo = photo;
+        this.email = email;
+    }
+
+=======
+        
+>>>>>>> 479aa42e44178bdc672a66e182f4aa074741b216
+    public Book() {
+        throw new UnsupportedOperationException("Default constructor is not supported.");
+    }
+
     public int getBookId() {
         return bookId;
     }
@@ -90,7 +116,5 @@ public class Book {
     public String toString() {
         return "Book{" + "bookId=" + bookId + ", bookName=" + bookName + ", author=" + author + ", price=" + price + ", bookCategory=" + bookCategory + ", status=" + status + ", photo=" + photo + '}';
     }
-    
-    
-    
+
 }
